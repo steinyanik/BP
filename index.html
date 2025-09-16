@@ -8,15 +8,31 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #e100ff;
+            background-color: #BF94E4;
             padding: 20px;
             max-width: 600px;
             margin: auto;
         }
         h1 {
-            text-align: center;
-            color:#ffffff;
+            font-size: 48px;
+            font-weight: bold;
+            background: linear-gradient(45deg,
+                #FF0000, #FF7F00, #FFFF00,
+                #00FF00, #0000FF, #4B0082, #8B00FF);
+                background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 400% 400%;
+            animation: rainbowanim 10s ease infinite;
         }
+ 
+        @keyframes rainbowanim {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+ 
+ 
         h3{
             text-align: center;
         }

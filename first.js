@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded", () => {
       name,
       kommen,
       bierpong,
-      partner: partner || "-",  // falls leer
+      partner: partner || "-",
       timestamp
     };
 

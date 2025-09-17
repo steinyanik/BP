@@ -1,214 +1,181 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bierpong Anmeldung</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #BF94E4;
-            padding: 20px;
-            max-width: 600px;
-            margin: auto;
-        }
-        h1 {
-            font-size: 48px;
-            font-weight: bold;
-            background: linear-gradient(45deg,
-                #FF0000, #FF7F00, #FFFF00,
-                #00FF00, #0000FF, #4B0082, #8B00FF);
-                background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-size: 400% 400%;
-            animation: rainbowanim 10s ease infinite;
-        }
- 
-        @keyframes rainbowanim {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-        
-        .event-info {
-    margin-top: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    font-size: 18px;
-}
- 
-.event-row {
-    display: flex;
-    justify-content: space-between;
-    background-color: #f0f0f0;
-    padding: 10px 15px;
-    border-radius: 6px;
-}
- 
-.event-label {
-    font-weight: bold;
-    color: #333;
-}
- 
-.event-value {
-    color: #da3c3c;
-}
-        h3{
-            text-align: center;
-        }
-        form {
-            background: rgb(255, 255, 255);
-            padding: 20px;
-            border-radius: 8px;
-            margin-top: 20px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-        label {
-            display: block;
-            margin-top: 10px;
-        }
-        input, select, textarea {
-            width: 98%;
-            padding: 8px;
-            margin-top: 5px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-        button {
-            margin-top: 15px;
-            padding: 20px;
-            background-color: #28a745;
-            color: white;
-            border: none;
-            border-radius: 55px;
-            cursor: pointer;
-            width: 100%;
-        }
-        button:hover {
-            background-color: #4400ff;
-        }
-        .radio-section {
-            margin-top: 20px;
-        }
-        .radio-section h2 {
-            margin-bottom: 10px;
-        }
-        .radio-group {
-            display: flex;
-            justify-content: space-between;
-        }
-        .radio-group label {
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            flex: 1;
-            justify-content: center;
-        }
-
-
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bierpong Anmeldung</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #BF94E4;
+      padding: 20px;
+      max-width: 600px;
+      margin: auto;
+    }
+    h1 {
+      font-size: 48px;
+      font-weight: bold;
+      background: linear-gradient(45deg,
+          #FF0000, #FF7F00, #FFFF00,
+          #00FF00, #0000FF, #4B0082, #8B00FF);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-size: 400% 400%;
+      animation: rainbowanim 10s ease infinite;
+    }
+    @keyframes rainbowanim {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    .event-info {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      font-size: 18px;
+    }
+    .event-row {
+      display: flex;
+      justify-content: space-between;
+      background-color: #f0f0f0;
+      padding: 10px 15px;
+      border-radius: 6px;
+    }
+    .event-label {
+      font-weight: bold;
+      color: #333;
+    }
+    .event-value {
+      color: #da3c3c;
+    }
+    h3 {
+      text-align: center;
+    }
+    form {
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      margin-top: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    label {
+      display: block;
+      margin-top: 10px;
+    }
+    input, select, textarea {
+      width: 98%;
+      padding: 8px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    button {
+      margin-top: 15px;
+      padding: 20px;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      border-radius: 55px;
+      cursor: pointer;
+      width: 100%;
+    }
+    button:hover {
+      background-color: #4400ff;
+    }
+    .radio-group {
+      display: flex;
+      justify-content: space-between;
+    }
+    .radio-group label {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      flex: 1;
+      justify-content: center;
+    }
+  </style>
 </head>
-
 <body>
-    <h1>Maike&Yanik Geburtstag</h1>
-    <form>
-        <form id="anmeldung-form"></form>
-        <h2>Name:</h2>
-        <input type="text" id="name" name="name" required>
+  <h1>Maike & Yanik Geburtstag</h1>
 
-        <h2>Ich komme:</h2>
+  <!-- EINZIGES FORMULAR -->
+  <form id="anmeldung-form">
+    <h2>Name:</h2>
+    <input type="text" id="name" name="name" required>
 
-        <div class="radio-group">
-            <label>
-                Alleine
-                <input type="radio" name="auswahl" value="option1" checked>
-            </label>
-
-            <label>
-                Mit Partner
-                <input type="radio" name="auswahl" value="option2">
-            </label>
-
-            <label>
-                Garnicht :(
-                <input type="radio" name="auswahl" value="option3">
-            </label>
-        </div> 
-        
-        <h2>Bierpong Turnier:</h2>
-
-        <div class="radio-group">
-            <label>
-                Alleine
-                <input type="radio" name="auswahl1" value="option1" checked>
-            </label>
-
-            <label>
-                Mit Partner
-                <input type="radio" name="auswahl1" value="option2">
-            </label>
-
-            <label>
-                Garnicht :(
-                <input type="radio" name="auswahl1" value="option3">
-            </label>
-        </div> 
-        <button type="submit">Ja ich spiele das komplette Turnier mit</button>
-        <!-- Honeypot -->
-        <input type="text" name="website" id="website" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px">
-    </form>
-
-    <form>
-    <div class="event-info">
-        <div class="event-row">
-            <span class="event-label">Wann:</span>
-            <span class="event-value">22.11.2025 18:00</span>
-        </div>
-        <div class="event-row">
-            <span class="event-label">Wo:</span>
-            <span class="event-value">Britten</span>
-        </div>
+    <h2>Ich komme:</h2>
+    <div class="radio-group">
+      <label>Alleine
+        <input type="radio" name="auswahl" value="Alleine" checked>
+      </label>
+      <label>Mit Partner
+        <input type="radio" name="auswahl" value="Mit Partner">
+      </label>
+      <label>Garnicht :(
+        <input type="radio" name="auswahl" value="Garnicht">
+      </label>
     </div>
-        <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d741.3719374630276!2d6.672811537830011!3d49.520042655881205!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4795756a1d150eb5%3A0x75f3427598766ffa!2sJugendzentrum%20Britten!5e1!3m2!1sde!2sde!4v1758019314987!5m2!1sde!2sde"
-        width="100%"
-        height="300"
-        style="border:0;"
-        allowfullscreen=""
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade">
-        </iframe>
-    </form>
 
-    <form>
-        <h2>Bierpong Regelwerk:</h2>
-        Gespielt wird eine Gruppenphase und eine anschließende KO-Runde.
-        Es wird in 2er Teams gespielt und das Zeitlimit beträgt 10 Minuten.
-        <ol>
-            <li>Beide werfen 1 mal</li>
-            <li>Wer trifft darf noch mal</li>
-            <li>Ellenbogen nicht über die Pyramidenspitze</li>
-            <li>Kein Fingern oder Pusten</li>
-            <li>Wenn beide Bälle in einem Becher sind > 3 Becher nach wahl</li>
-            <li>Egal wer anfängt > immer Nachwurf</li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li>Yanik hat recht</li>
-        </ol>
-    </form>
+    <h2>Bierpong Turnier:</h2>
+    <div class="radio-group">
+      <label>Alleine
+        <input type="radio" name="auswahl1" value="Alleine" checked>
+      </label>
+      <label>Mit Partner
+        <input type="radio" name="auswahl1" value="Mit Partner">
+      </label>
+      <label>Garnicht :(
+        <input type="radio" name="auswahl1" value="Garnicht">
+      </label>
+    </div>
 
-<!-- EmailJS SDK laden -->
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-<script>
-  (function(){ 
-    emailjs.init({ publicKey: "Muxz0bEeChlimQEhm" });
-  })();
-</script>
+    <button type="submit">Ja ich spiele das komplette Turnier mit</button>
+    <!-- Honeypot -->
+    <input type="text" name="website" id="website" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px">
+  </form>
 
-<script src="first.js" defer></script>
+  <!-- Infos -->
+  <div class="event-info">
+    <div class="event-row">
+      <span class="event-label">Wann:</span>
+      <span class="event-value">22.11.2025 18:00</span>
+    </div>
+    <div class="event-row">
+      <span class="event-label">Wo:</span>
+      <span class="event-value">Britten</span>
+    </div>
+  </div>
+  <iframe
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d741.3719374630276!2d6.672811537830011!3d49.520042655881205!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4795756a1d150eb5%3A0x75f3427598766ffa!2sJugendzentrum%20Britten!5e1!3m2!1sde!2sde!4v1758019314987!5m2!1sde!2sde"
+    width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade">
+  </iframe>
+
+  <!-- Regeln -->
+  <section>
+    <h2>Bierpong Regelwerk:</h2>
+    Gespielt wird eine Gruppenphase und eine anschließende KO-Runde.
+    Es wird in 2er Teams gespielt und das Zeitlimit beträgt 10 Minuten.
+    <ol>
+      <li>Beide werfen 1 mal</li>
+      <li>Wer trifft darf noch mal</li>
+      <li>Ellenbogen nicht über die Pyramidenspitze</li>
+      <li>Kein Fingern oder Pusten</li>
+      <li>Wenn beide Bälle in einem Becher sind > 3 Becher nach Wahl</li>
+      <li>Egal wer anfängt > immer Nachwurf</li>
+      <li>Yanik hat recht</li>
+    </ol>
+  </section>
+
+  <!-- EmailJS SDK laden -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script>
+    (function(){
+      emailjs.init({ publicKey: "Muxz0bEeChlimQEhm" });
+    })();
+  </script>
+  <script src="first.js" defer></script>
 </body>
 </html>
-

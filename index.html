@@ -1,5 +1,3 @@
-<script src="first.js"></script>
-
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -116,6 +114,7 @@
 <body>
     <h1>Maike&Yanik Geburtstag</h1>
     <form>
+        <form id="anmeldung-form"></form>
         <h2>Name:</h2>
         <input type="text" id="name" name="name" required>
 
@@ -156,7 +155,9 @@
                 <input type="radio" name="auswahl1" value="option3">
             </label>
         </div> 
-        <button onklick="test()">Ja ich spiele das komplette Turnier mit</button>
+        <button type="submit">Ja ich spiele das komplette Turnier mit</button>
+        <!-- Honeypot -->
+        <input type="text" name="website" id="website" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px">
     </form>
 
     <form>
@@ -198,6 +199,16 @@
             <li>Yanik hat recht</li>
         </ol>
     </form>
+
+<!-- EmailJS SDK laden -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>
+  (function(){ 
+    emailjs.init({ publicKey: "Muxz0bEeChlimQEhm" });
+  })();
+</script>
+
+<script src="first.js" defer></script>
 </body>
 </html>
 
